@@ -2,11 +2,11 @@
 let n
 initialize() 
 setInterval(() => {
-  $(`.images>img:nth-child(${judgeN(n)})`).removeClass().addClass("leave")
+  makeLeave(getImage(n))
   .one('transitionend',function(x) {
-    $(x.currentTarget).removeClass().addClass('enter')
+    makeEnter($(x.currentTarget))
   })
-  $(`.images>img:nth-child(${judgeN(n+1)})`).removeClass().addClass("current")
+  makeCurrent(getImage(n+1))
   n+=1
 }, 3000)
 
@@ -27,7 +27,24 @@ function initialize() {
   .siblings().addClass('enter')
 }
 
+function getImage(n) {
+  return $(`.images>img:nth-child(${judgeN(n)})`)
+}
 
+function makeCurrent($node) {
+  $node.removeClass().addClass("current")
+  return $node
+
+}
+
+function makeLeave($node) {
+  $node.removeClass().addClass("leave")
+  return $node
+}
+function makeEnter($node) {
+  $node.removeClass().addClass("enter")
+  return $node
+}
 
 
 
