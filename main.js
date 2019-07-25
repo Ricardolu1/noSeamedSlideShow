@@ -32,17 +32,17 @@ function getImage(n) {
 }
 
 function makeCurrent($node) {
-  $node.removeClass().addClass("current")
+  $node.removeClass("leave enter").addClass("current")
   return $node
 
 }
 
 function makeLeave($node) {
-  $node.removeClass().addClass("leave")
+  $node.removeClass("current enter" ).addClass("leave")
   return $node
 }
 function makeEnter($node) {
-  $node.removeClass().addClass("enter")
+  $node.removeClass("current leave").addClass("enter")
   return $node
 }
 
