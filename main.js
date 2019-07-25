@@ -1,6 +1,6 @@
 
 let n
-initialize() 
+initializeElements() 
 setInterval(() => {
   makeLeave(getImage(n))
   .one('transitionend',function(x) {
@@ -8,7 +8,7 @@ setInterval(() => {
   })
   makeCurrent(getImage(n+1))
   n+=1
-}, 3000)
+}, 3000) 
 
 //我们要写一个函数，保证n的值是1，2，3不会是别的
 function judgeN(n) {
@@ -21,7 +21,7 @@ function judgeN(n) {
   return n
 }
 
-function initialize() {
+function initializeElements() {
   n=1
   $(`.images>img:nth-child(${n})`).addClass("current")
   .siblings().addClass('enter')
@@ -32,18 +32,14 @@ function getImage(n) {
 }
 
 function makeCurrent($node) {
-  $node.removeClass("leave enter").addClass("current")
-  return $node
-
+  return $node.removeClass("leave enter").addClass("current")
+ 
 }
-
 function makeLeave($node) {
-  $node.removeClass("current enter" ).addClass("leave")
-  return $node
+  return $node.removeClass("current enter" ).addClass("leave")
 }
 function makeEnter($node) {
-  $node.removeClass("current leave").addClass("enter")
-  return $node
+  return $node.removeClass("current leave").addClass("enter")
 }
 
 
