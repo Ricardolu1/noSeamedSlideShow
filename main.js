@@ -1,4 +1,3 @@
-
 let n
 initializeElements() 
 setInterval(() => {
