@@ -3,7 +3,7 @@
   padding: 0;
   /* box-sizing: border-box; */
 }
-.wrapper{
+.window-wrapper{
   position: relative;
 }
 .window{
@@ -35,11 +35,15 @@
 .images>img.enter{
   transform: translateX(100%)
 }
-.buttons{
-  text-align: center;
+.buttons-wrapper{
+  width:400px;
   position: absolute;
-  left: 708px;
-  top:300px;
+  left: 567px;
+  top:301px;
+  text-align: center;
+}
+.buttons{
+  
 
 }
 
